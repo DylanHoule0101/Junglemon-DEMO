@@ -1,0 +1,188 @@
+import random
+from time import sleep
+junglings = ["treehoot","froggitir","charring"]
+names = ["Viola","Grant","Clement","Ramos","Ásh","Korina","Ash","Korina","Carson The Dev","Dylan The Dev"]
+CPUname = random.choice(names)
+print(f"Hello, new challenger, I´m trainer {CPUname}. what is your name?")
+froggitirAttacks = ["bubble", "water_gun","hydro_defence","splash"]
+charringAttacks = ["flamethrower", "lava_spout", "blaze", "erupt","poop"]
+treehootAttacks = ["leaf_blade", "vine_whip", "solar_sheild", "venom_bite"]
+userHP = 1000
+CPUhp = 1000
+name = input(">")
+sleep(1)
+print(f"welcome, trainer {name}, to  choose your jungling.")
+sleep(1)
+print("charring: fire type. abilitys: flamethrower, lava spout, blaze, erupt")
+sleep(1)
+print("froggitir: water type, abilitys: bubble, water gun, splash")
+sleep(1)
+print("treehoot: plant type, abilitys: leaf blade, vine whip,  venom bite")
+userjungling = input(">")
+if "charring" in userjungling:
+  print("you have chosen charring!")
+  userchoice = "charring"
+elif "froggitir" in userjungling:
+  print(" you have chosen froggitir!")
+  userchoice = "froggitir"
+elif "treehoot" in userjungling:
+  print("you have chosen treehoot!")
+  userchoice = "treehoot"
+else:
+  print("thats not one, silly!")
+  userchoice = random.choice(junglings)
+  sleep(2)
+  print(f"the game chose for you. and you have {userchoice}")
+CPUchoice = random.choice(junglings)
+print(f"I Have chosen {CPUchoice}") 
+print("Let the battle begin!")
+while True:
+  flamethrower = random.randint(80, 90)
+  lava_spout = random.randint(50, 92)
+  blaze = random.randint(50, 67)
+  erupt = random.randint(20, 100)
+  bubble = random.randint(60, 65)
+  water_gun = random.randint(80, 90)
+  splash = random.randint(50, 80 )
+  leaf_blade = random.randint(50, 80)
+  vine_whip = 40
+  venom_bite = random.randint(60, 65)
+  print("it is your turn!")
+  #treehoot
+  if "treehoot" in userchoice:
+    print("leaf blade, vine whip, solar sheild, venom bite")
+    treehootAttack = input("<")
+    if "leaf blade" in treehootAttack:
+      print("TREEHOOT! USE LEAF BLADE!!")
+      CPUhp = CPUhp - leaf_blade
+      sleep(1)
+      print(f"trainer {CPUname}'s junglemon is at {CPUhp} hp!")
+    if "vine whip" in treehootAttack:
+      print("TREEHOOT! USE VINE WHIP!!")
+      CPUhp = CPUhp - vine_whip
+      sleep(1)
+      print(f"trainer {CPUname}'s junglemon is at {CPUhp} hp!")
+    if "venom_bite" in treehootAttack:
+      print("TREEHOOT! USE VENOM BITE!!")
+      CPUhp = CPUhp - venom_bite
+      sleep(1)
+      print(f"trainer {CPUname}'s junglemon is at {CPUhp} hp!")  
+    if "solar sheild" in treehootAttack:
+      print("TREEHOOT! DEFEND AND USE SOLAR SHEILD!!")
+  #froggitir    
+  elif "froggitir" in userchoice:
+    print("bubble, water gun, hydro defence, splash")
+    froggitirAttack = input("<")
+    if "bubble" in froggitirAttack:
+      print("FROGGITIR! USE BUBBLE!!")
+      CPUhp = CPUhp - bubble
+      sleep(1)
+      print(f"trainer {CPUname}'s junglemon is at {CPUhp} hp!")
+    if "water gun" in froggitirAttack:
+      print("FROGGITIR! USE WATER GUN!!")
+      CPUhp = CPUhp - water_gun
+      sleep(1)
+      print(f"trainer {CPUname}'s junglemon is at {CPUhp} hp!")
+    if "splash" in froggitirAttack:
+      print("FROGGITIR! USE SPLASH!!")
+      CPUhp = CPUhp - splash
+      print(f"trainer {CPUname}'s junglemon is at {CPUhp} hp!")  
+    if "hydro defence" in froggitirAttack:
+      print("FROGGITIR! DEFEND AND USE HYDRO DEFENCE!!") 
+      #charring
+  elif "charring" in userchoice:
+    print("flamethrower, lava spout, blaze, erupt")
+    charringAttack = input("<")
+    if "flamethrower" in charringAttack:
+      print("CHARRING! USE FLAMETHROWER!!")
+      CPUhp = CPUhp - flamethrower
+      sleep(1)
+      print(f"trainer {CPUname}'s junglemon is at {CPUhp} hp!")
+    if "lava spout" in charringAttack:
+      print("CHARRING! USE LAVA SPOUT!!")
+      CPUhp = CPUhp - lava_spout
+      sleep(1)
+      print(f"trainer {CPUname}'s junglemon is at {CPUhp} hp!")
+    if "blaze" in charringAttack:
+      print("CHARRING! USE BLAZE!!")
+      CPUhp = CPUhp - blaze
+      sleep(1)
+      print(f"trainer {CPUname}'s junglemon is at {CPUhp} hp!")
+    elif "erupt" in charringAttack:
+      print("CHARRING! ERUPT!!")
+      CPUhp = CPUhp - erupt
+      sleep(1)
+      print(f"trainer {CPUname}'s junglemon is at {CPUhp} hp!")
+  sleep(2)    
+  if "charring" in CPUchoice: 
+    CPUcharring = random.choice(charringAttacks)
+    if "flamethrower" in CPUcharring:
+      print("CHARRING! USE FLAMETHROWER!!")
+      userHP = userHP - flamethrower
+      sleep(1)
+      print(f"your junglemon is at {userHP} hp!")
+  if "charring" in CPUchoice: 
+    CPUcharring = random.choice(charringAttacks)
+    if "lava_spout" in CPUcharring:
+      print("CHARRING! USE LAVA SPOUT!!")
+      userHP = userHP - lava_spout
+      sleep(1)
+      print(f"your junglemon is at {userHP} hp!")
+    if "blaze" in CPUcharring:
+      print("CHARRING! USE BLAZE!!")
+      userHP = userHP - blaze
+      sleep(1)
+      print(f"your junglemon is at {userHP} hp!")  
+    if "erupt" in CPUcharring:
+      print("CHARRING! ERUPT!!")
+      userHP = userHP - erupt
+      sleep(1)
+      print(f"your junglemon is at {userHP} hp!")  
+    if "poop" in CPUcharring:
+      print(f"ha! Trainer {CPUname}'s junglemon missed!")
+  if "froggitir" in CPUchoice:
+    CPUfrogitir = random.choice(froggitirAttacks)
+    if "bubble" in CPUfrogitir:
+      print("FROGGITIR! USE BUBBLE!!")
+      userHP = userHP - bubble
+      sleep(1)
+      print(f"your junglemon is at {userHP} hp!")
+    if "water_gun" in CPUfrogitir:
+      print("FROGGITIR! USE WATER GUN!!")
+      userHP = userHP - water_gun
+      sleep(1)
+      print(f"your junglemon is at {userHP} hp!")  
+    if "splash" in CPUfrogitir:
+      print("FROGGITIR! USE SPLASH!!")
+      userHP = userHP - splash
+      sleep(1)
+      print(f"your junglemon is at {userHP} hp!")
+    if "hydro_defence" in CPUfrogitir:
+      print(f"ha! Trainer {CPUname}'s junglemon missed!")
+  if "treehoot" in CPUchoice:
+    CPUtreehoot = random.choice(treehootAttacks)
+    if "leaf_blade" in CPUtreehoot:
+      print("TREEHOOT! USE LEAF BLADE!!")
+      userHP = userHP - leaf_blade
+      sleep(1)
+      print(f"your junglemon is at {userHP} hp!")
+    if "vine_whip" in CPUtreehoot:
+      print("TREEHOOT! USE VINE WHIP!!")
+      userHP = userHP - vine_whip
+      sleep(1)
+      print(f"your junglemon is at {userHP} hp!")  
+      if "venom_bite" in CPUtreehoot:
+        print("TREEHOOT! USE VENOM BITE!!")
+        userHP = userHP - venom_bite
+        sleep(1)
+        print(f"your junglemon is at {userHP} hp!") 
+      if "solar_sheild" in CPUtreehoot:  
+        print(f"ha! Trainer {CPUname}'s junglemon missed!")
+if "0" in CPUhp:
+    print("you win!")
+if "0" in userHP:
+    print("you lose.....")  
+    
+    
+    
+  
